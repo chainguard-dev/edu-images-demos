@@ -13,6 +13,6 @@ WORKDIR /inky
 # Make sure you update Python version in path
 COPY --from=builder /home/nonroot/.local/lib/python3.11/site-packages /home/nonroot/.local/lib/python3.11/site-packages
 
-COPY inky.py inky.png .
+COPY inky.py inky.png ./
 
 ENTRYPOINT [ "python", "/inky/inky.py" ]
