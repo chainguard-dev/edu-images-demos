@@ -1,0 +1,19 @@
+#!/usr/bin/php
+<?php
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Minicli\App;
+
+$app = new App();
+
+$app->registerCommand('get', function () use ($app) {
+
+    $animals = [ 'turtle', 'seagull', 'octopus', 'shark', 'whale', 'dolphin', 'walrus', 'penguin', 'seahorse'];
+    $adjectives = [ 'ludicrous', 'mischievous', 'graceful', 'fortuitous', 'charming', 'ravishing', 'gregarious'];
+
+    $app->info($adjectives[array_rand($adjectives)] . '-' . $animals[array_rand($animals)]);
+});
+
+$app->runCommand($argv);
+
