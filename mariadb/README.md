@@ -11,7 +11,7 @@ After cloning this repository to your local system, run the following command to
 docker compose up
 ```
 
-This will spin up three containers: the `app` container, the `mariadb` container, and te `nginx` container. These will run as services. 
+This will spin up three containers: the `app` container, the `mariadb` container, and the `nginx` container. These will run as services. 
 
 Once the environment is up, you can visit `localhost:8000` to check the demo. The `index.php` file has a basic code that:
 
