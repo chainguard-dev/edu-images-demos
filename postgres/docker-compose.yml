@@ -1,0 +1,38 @@
+version: "3.7"
+services:
+  app:
+    image: php-fpm-pgsql
+    build: .
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - ./:/app
+    networks:
+      - wolfi
+
+  nginx:
+    image: cgr.dev/chainguard/nginx
+    restart: unless-stopped
+    ports:
+      - 8000:8080
+    volumes:
+      - ./:/app
+      - ../nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - wolfi
+
+  postgres:
+    image: cgr.dev/chainguard/postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: php
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: php-test
+    ports:
+      - 5432:5432
+    networks:
+      - wolfi
+
+networks:
+  wolfi:
+    driver: bridge
