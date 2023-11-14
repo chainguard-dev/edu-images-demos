@@ -1,0 +1,22 @@
+/*
+Chainguard Academy NGINX demo application
+*/
+
+body {
+    text-align: center;
+    background-color: #fcebfc;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #df45e6;
+}
+
+h2, h3 {
+    color: #9745e6;
+}
+
+p {
+    color: #583ce8
+}
+
