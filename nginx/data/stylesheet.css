@@ -20,3 +20,7 @@ p {
     color: #583ce8
 }
 
+.corners {
+    border-radius: 10px;
+}
+
