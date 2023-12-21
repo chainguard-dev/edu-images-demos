@@ -63,3 +63,5 @@ curl http://localhost:8000/test
 ```shell
 {"code":"success","meta":{"total":1,"count":1},"payload":[{"msg":"testing node wolfi image","id":"6011f987-b9f8-4442-8253-d54166df5966","createDate":"2023-02-07T15:57:23.520Z"}]}
 ```
+
+When you're finished, you can close the application by pressing `CTRL+C` (`CMD+C` if you're using macOS). 
