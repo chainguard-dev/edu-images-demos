@@ -1,0 +1,20 @@
+{
+    "name": "golang-chainguard-devcontainer",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {}
+    },
+    "runArgs": [],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.Go"
+            ]
+        }
+    },
+    // 'forwardPorts' exposes ports from the container to your host
+    // "forwardPorts": [9000],
+    // 'postCreateCommand' runs after the container is created. eg to get dependencies
+    // "postCreateCommand": "go get .",
+    "remoteUser": "nonroot"
+}
