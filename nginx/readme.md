@@ -4,7 +4,7 @@ This repository contains a simple demonstration of an nginx application using th
 
 ## Running the Demo
 
-You must have nginx and the Docker Engine installed on your machine to run this demonstration. 
+You must have nginx and Docker Engine installed on your machine to run this demonstration. 
 
 Clone this repository to your local machine. Navigate to the `nginxdemo` directory, where you will find a `Dockerfile`.
 
