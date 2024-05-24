@@ -1,49 +1,41 @@
-# NGINX Demo Application Instructions
+# nginx Demo
 
-General overview of how to run the NGINX Demo application - for use in writing complete NGINX image guide at a later date
+This repository contains a simple demonstration of an nginx application using the Chainguard nginx Image. For a complete tutorial, please refer to the [Chainguard Academy Getting Started with the nginx Chainguard Image guide](https://edu.chainguard.dev/chainguard/chainguard-images/getting-started/nginx/).
 
-Begin by installing NGINX:
+## Running the Demo
 
-`brew install nginx`
+You must have nginx and the Docker Engine installed on your machine to run this demonstration. 
 
-*(Installation information is not the most helpful on nginx.org [https://nginx.org/en/docs/install.html] so I am including this since it helped me, but maybe the guide would want to skip over it)*
+Clone this repository to your local machine. Navigate to the `nginxdemo` directory, where you will find a `Dockerfile`.
 
-Create a directory for the demo application, and navigate to it:
+When the image is built, the `Dockerfile` will do the following:
 
-`mkdir ~/nginxdemo/ && cd $_`
+1. Start a new build based on the `cgr.dev/chainguard/nginx:latest` image;
+2. Expose port 8080 in the container for nginx to listen on;
+3. Copy the HTML content from the data directory into the image.
 
-Within this directory, create a `data` directory, and navigate to it:
+You can now build the image with:
 
-`mkdir data && cd $_`
+```shell
+docker build . -t nginx-demo
+```
 
-Three files for the demo app are created, and go into this `data` directory:
-1. `nano index.html` (copy the HTML from the demo here)
+Once the build is complete, run the image with:
 
-2. `nano stylesheet.css` (copy the CSS from the demo here)
+```shell
+docker run -d --name nginxcontainer -p 8080:8080 nginx-demo
+```
 
-3. `curl -O https://raw.githubusercontent.com/chainguard-dev/edu-images-demos/734e6171ee69f0e0dbac95e6ebc1759ac18bf00a/nginx/data/inky.png` (this is the picture of Inky rendered in the HTML)
+The `-d` flag configures our container to run as a background process. The `--name` flag will name our container `nginxcontainer`, making it easy to identify from other containers. The `-p` flag publishes the port that the container listens on to a port on your local machine. This allows us to navigate to `localhost:8080` in a web browser of our choice to view the HTML content served by the container. You should see the same HTML page as before, with Inky and an octopus fun fact.
 
-Within the `nginxdemo` folder, create the `nginx.conf` file:
+If you wish to publish to a different port on your machine, such as `1313`, you can do so by altering the command-line argument as shown:
 
-`nano nginx.conf`
+```shell
+docker run -d --name nginxcontainer -p 1313:8080 nginx-demo
+```
 
-... and copy in the configuration info from the NGINX demo repo. Be sure to replace the file path on line 30 with the appropriate file path to your local `data` directory!
+When you are done with your container, you can stop it with the following command:
 
-also, create the `mime.types` file:
-`nano mime.types`
-... and copy in the info from the demo repo
-
-Under `nginxdemo`, create a new directory `logs` and navigate to it:
-
-`mkdir logs && cd $_`
-
-within the directory, create the `access.log` file
-
-`mkfile b access.log`
-
-This is required by NGINX to run the config file, used to dump logs
-
-To run the demo, run `nginx -c filepath`,
-where the filepath is replaced by the location of the `nginx.conf` file created in this demo.
-
-To view the local webserver, navigate to `localhost:8080` in your web browser of choice. To reload the configuration file to account for any changes to the configuration, or changes to the HTML content, you can run `nginx -s reload` in your terminal. To stop NGINX, you can run `nginx -s quit` to safely exit.
+```shell
+docker container stop nginxcontainer
+```
