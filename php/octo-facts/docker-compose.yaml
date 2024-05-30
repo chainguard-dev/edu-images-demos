@@ -1,7 +1,6 @@
-version: "3.7"
 services:
   app:
-    image: octofacts
+    image: cgr.dev/chainguard/laravel:latest-dev
     restart: unless-stopped
     working_dir: /app
     user: laravel

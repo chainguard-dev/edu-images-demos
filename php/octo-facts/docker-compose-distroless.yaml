@@ -1,0 +1,40 @@
+services:
+  app:
+    image: octofacts
+    build:
+      context: .
+    restart: unless-stopped
+    working_dir: /app
+    user: laravel
+    volumes:
+      - .:/app
+    networks:
+      - wolfi
+
+  nginx:
+    image: cgr.dev/chainguard/nginx
+    restart: unless-stopped
+    ports:
+      - 8000:8080
+    volumes:
+      - .:/app
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - wolfi
+
+  mariadb:
+    image: cgr.dev/chainguard/mariadb
+    restart: unless-stopped
+    environment:
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 1
+      MARIADB_USER: laravel
+      MARIADB_PASSWORD: password
+      MARIADB_DATABASE: octofacts
+    ports:
+      - 3306:3306
+    networks:
+      - wolfi
+
+networks:
+  wolfi:
+    driver: bridge
