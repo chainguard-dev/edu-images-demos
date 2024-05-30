@@ -1,6 +1,8 @@
 services:
   app:
-    image: cgr.dev/chainguard/laravel:latest-dev
+    image: octofacts
+    build:
+      context: .
     restart: unless-stopped
     working_dir: /app
     user: laravel
