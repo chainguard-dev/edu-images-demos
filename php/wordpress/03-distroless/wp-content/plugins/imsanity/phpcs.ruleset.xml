@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Coding Standards for Plugins">
+	<description>Generally-applicable sniffs for WordPress plugins</description>
+
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/tests/*</exclude-pattern>
+
+	<rule ref="WordPress-Core" />
+	<rule ref="WordPress-Docs" />
+	<rule ref="WordPress.PHP.NoSilencedErrors">
+		<properties>
+			<property name="customAllowedFunctionsList" type="array" value="exif_read_data"/>
+		</properties>
+	</rule>
+
+	<config name="testVersion">7.4-</config>
+	<rule ref="PHPCompatibilityWP">
+		<severity>10</severity>
+	</rule>
+
+	<rule ref="WordPress.Security">
+		<severity>10</severity>
+	</rule>
+
+	<rule ref="WordPress.DB.PreparedSQL">
+		<severity>10</severity>
+	</rule>
+</ruleset>

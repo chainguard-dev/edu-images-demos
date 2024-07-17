@@ -1,0 +1,313 @@
+{
+	"settings": {
+		"appearanceTools": true,
+		"layout": {
+			"contentSize": "1180px",
+			"wideSize": "1200px"
+		},
+		"color": {
+			"palette": [
+				{
+					"color": "#f9f9f9",
+					"name": "Section Bg",
+					"slug": "section-bg"
+				},
+				{
+					"color": "#000000",
+					"name": "Primary",
+					"slug": "primary"
+				},
+				{
+					"color": "#666666",
+					"name": "Secondary",
+					"slug": "secondary"
+				},
+				{
+					"color": "#4b4b4b",
+					"name": "Hover Color",
+					"slug": "hovercolor"
+				}
+			]
+		},
+		"spacing": {
+			"units": [
+				"%",
+				"px",
+				"em",
+				"rem",
+				"vh",
+				"vw"
+			]
+		},
+		"typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+					"name": "System Font",
+					"slug": "system-font"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Kanit",
+							"fontStyle": "normal",
+							"fontWeight": "100",
+							"src": [
+								"file:./assets/fonts/kanit_normal_100.ttf"
+							]
+						},
+						{
+							"fontFamily": "Kanit",
+							"fontStyle": "normal",
+							"fontWeight": "200",
+							"src": [
+								"file:./assets/fonts/kanit_normal_200.ttf"
+							]
+						},
+						{
+							"fontFamily": "Kanit",
+							"fontStyle": "normal",
+							"fontWeight": "300",
+							"src": [
+								"file:./assets/fonts/kanit_normal_300.ttf"
+							]
+						},
+						{
+							"fontFamily": "Kanit",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/kanit_normal_400.ttf"
+							]
+						},
+						{
+							"fontFamily": "Kanit",
+							"fontStyle": "italic",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/kanit_italic_400.ttf"
+							]
+						},
+						{
+							"fontFamily": "Kanit",
+							"fontStyle": "normal",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/kanit_normal_500.ttf"
+							]
+						},
+						{
+							"fontFamily": "Kanit",
+							"fontStyle": "normal",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/kanit_normal_600.ttf"
+							]
+						},
+						{
+							"fontFamily": "Kanit",
+							"fontStyle": "normal",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/kanit_normal_700.ttf"
+							]
+						},
+						{
+							"fontFamily": "Kanit",
+							"fontStyle": "italic",
+							"fontWeight": "700",
+							"src": [
+								"file:./assets/fonts/kanit_italic_700.ttf"
+							]
+						},
+						{
+							"fontFamily": "Kanit",
+							"fontStyle": "normal",
+							"fontWeight": "800",
+							"src": [
+								"file:./assets/fonts/kanit_normal_800.ttf"
+							]
+						},
+						{
+							"fontFamily": "Kanit",
+							"fontStyle": "normal",
+							"fontWeight": "900",
+							"src": [
+								"file:./assets/fonts/kanit_normal_900.ttf"
+							]
+						},
+						{
+							"fontFamily": "Kanit",
+							"fontStyle": "italic",
+							"fontWeight": "600",
+							"src": [
+								"file:./assets/fonts/kanit_italic_600.ttf"
+							]
+						},
+						{
+							"fontFamily": "Kanit",
+							"fontStyle": "italic",
+							"fontWeight": "500",
+							"src": [
+								"file:./assets/fonts/kanit_italic_500.ttf"
+							]
+						}
+					],
+					"fontFamily": "Kanit",
+					"slug": "kanit"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Average Sans",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/average-sans_normal_400.ttf"
+							]
+						}
+					],
+					"fontFamily": "Average Sans",
+					"slug": "average-sans"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Castoro",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/castoro_normal_400.ttf"
+							]
+						}
+					],
+					"fontFamily": "Castoro",
+					"slug": "castoro"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Quando",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/quando_normal_400.ttf"
+							]
+						}
+					],
+					"fontFamily": "Quando",
+					"slug": "quando"
+				}
+			]
+		},
+		"useRootPaddingAwareAlignments": true
+	},
+	"styles": {
+		"blocks": {
+			"core/heading": {
+				"color": {
+					"text": "var(--wp--preset--color--primary)"
+				},
+				"elements": {
+					"link": {
+						":hover": {
+							"color": {
+								"text": "var(--wp--preset--color--secondary)"
+							}
+						},
+						"color": {
+							"text": "var(--wp--preset--color--primary)"
+						}
+					}
+				},
+				"typography": {
+					"textDecoration": "none"
+				}
+			},
+			"core/post-content": {
+				"elements": {
+					"link": {
+						"typography": {
+							"textDecoration": "underline"
+						}
+					}
+				}
+			},
+			"core/post-date": {
+				"color": {
+					"text": "#333333"
+				},
+				"elements": {
+					"link": {
+						":hover": {
+							"color": {
+								"text": "#888888"
+							}
+						},
+						"color": {
+							"text": "#333333"
+						}
+					}
+				}
+			},
+			"core/query-pagination-numbers": {
+				"typography": {
+					"letterSpacing": "5px"
+				}
+			}
+		},
+		"color": {
+			"background": "#ffffff",
+			"text": "#666666"
+		},
+		"elements": {
+			"heading": {
+				"color": {
+					"text": "var(--wp--preset--color--primary)"
+				},
+				"typography": {
+					"fontStyle": "normal",
+					"fontWeight": "400"
+				}
+			},
+			"link": {
+				":hover": {
+					"color": {
+						"text": "var(--wp--preset--color--hovercolor)"
+					}
+				},
+				"color": {
+					"text": "var(--wp--preset--color--primary)"
+				},
+				"typography": {
+					"textDecoration": "none"
+				}
+			}
+		},
+		"spacing": {
+			"padding": {
+				"bottom": "0px",
+				"left": "10px",
+				"right": "10px",
+				"top": "0px"
+			}
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--kanit)",
+			"fontStyle": "normal",
+			"fontWeight": "300"
+		}
+	},
+	"templateParts": [
+		{
+			"area": "header",
+			"name": "header"
+		},
+		{
+			"area": "footer",
+			"name": "footer"
+		}
+	],
+	"version": 2,
+	"$schema": "https://schemas.wp.org/wp/6.4/theme.json"
+}

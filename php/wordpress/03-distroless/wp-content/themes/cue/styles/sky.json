@@ -1,0 +1,40 @@
+{
+    "version": 2,
+    "$schema": "https://schemas.wp.org/wp/6.4/theme.json",
+    "title": "Sky",
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "color": "#7acff6",
+                    "name": "Section Bg",
+                    "slug": "section-bg"
+                },
+                {
+                    "color": "#000000",
+                    "name": "Primary",
+                    "slug": "primary"
+                },
+                {
+                    "color": "#121212",
+                    "name": "Secondary",
+                    "slug": "secondary"
+                },
+                {
+                    "color": "#279EFF",
+                    "name": "Hover Color",
+                    "slug": "hovercolor"
+                }
+            ]
+        }
+    },
+    "styles": {
+        "color": {
+            "background": "#eaf7fd",
+            "text": "var(--wp--preset--color--primary)"
+        },
+        "typography": {
+            "fontFamily": "var(--wp--preset--font-family--castoro)"
+        }
+    }
+}
