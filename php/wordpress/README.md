@@ -1,8 +1,8 @@
 # WordPress Chainguard Image Demos
 
-This directory contains a set of demos that show how to use the ChainGuard WordPress Image.
+This directory contains a set of demos that show how to use the Chainguard WordPress Image.
 
-All demos use Docker Compose to set up a LEMP environment composed by three services: PHP-FPM*, MariaDB and Nginx. The environment variables are set in a `.env` file that is included in each demo and can be modified to suit your needs.
+All demos use Docker Compose to set up a LEMP - **L**inux, (**e**)Nginx, **M**ariaDB, and **P**HP - environment composed of three services: PHP-FPM*, MariaDB and Nginx. The environment variables are set in a `.env` file that is included in each demo and can be modified to suit your needs.
 
 *The WordPress image has PHP-FPM built-in.
 

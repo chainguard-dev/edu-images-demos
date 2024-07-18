@@ -1,4 +1,4 @@
-FROM cgr.dev/chainguard/wordpress:latest-dev as builder
+FROM cgr.dev/chainguard/wordpress:latest-dev AS builder
 #trigger wp-config.php creation
 ENV WORDPRESS_DB_HOST=foo
 
