@@ -1,0 +1,41 @@
+services:
+  app:
+    image: wordpress-local-dev
+    build:
+        context: .
+        dockerfile: Dockerfile
+        args:
+          UID: 1000
+    user: wordpress
+    restart: unless-stopped
+    environment:
+      WORDPRESS_DB_HOST: mariadb
+      WORDPRESS_DB_USER: $WORDPRESS_DB_USER
+      WORDPRESS_DB_PASSWORD: $WORDPRESS_DB_PASSWORD
+      WORDPRESS_DB_NAME: $WORDPRESS_DB_NAME
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+      - document-root:/var/www/html
+
+  nginx:
+    image: cgr.dev/chainguard/nginx
+    restart: unless-stopped
+    ports:
+      - 8000:8080
+    volumes:
+      - document-root:/var/www/html
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
+  mariadb:
+    image: cgr.dev/chainguard/mariadb
+    restart: unless-stopped
+    environment:
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: 1
+      MARIADB_USER: $WORDPRESS_DB_USER
+      MARIADB_PASSWORD: $WORDPRESS_DB_PASSWORD
+      MARIADB_DATABASE: $WORDPRESS_DB_NAME
+    ports:
+      - 3306:3306
+
+volumes:
+    document-root:
