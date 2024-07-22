@@ -26,11 +26,11 @@ docker compose up --build
 You can navigate to `localhost:8000` in your browser to go through the regular WordPress installation wizard and test the image. To stop the containers, press `Ctrl+C` in the terminal where you ran the `docker compose up` command. To destroy the containers, run `docker compose down`.
 
 ## 03-distroless
-This demo uses a multi-stage Docker build to create a final Distroless image to reduce the image size and improve security. The Distroless image is a minimal image that only contains the necessary dependencies to run WordPress and won't allow for new package installations, reducing the attack surface.
+This demo uses a multi-stage Docker build to create a final Distroless image to improve security. The Distroless image is a minimal image that only contains the necessary dependencies to run WordPress and won't allow for new package installations, reducing the attack surface.
 
 The main difference here is that we're calling the entrypoint script at **build time** instead of run time. This is done to ensure the image is self-contained and doesn't rely on volumes set up within the host machine in order to work. Any customizations should be included in the `wp-content` folder that will be copied to the image at build time. The resulting runtime relies on a set of environment variables to configure database access.
 
-This demo includes a theme ([cue](https://wordpress.org/themes/cue/), a simple blogging theme) and a plugin ([imsanity](https://wordpress.org/plugins/imsanity/), a popular plugin used to resize images) to demonstrate how to include custom content in the image.
+This demo includes a theme ([Cue](https://wordpress.org/themes/cue/), a simple blogging theme) and a plugin ([Imsanity](https://wordpress.org/plugins/imsanity/), a popular plugin used to resize images) to demonstrate how to include custom content in the image.
 
 ```shell
 cd 03-distroless

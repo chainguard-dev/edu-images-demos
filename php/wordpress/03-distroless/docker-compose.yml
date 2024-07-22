@@ -10,6 +10,11 @@ services:
       WORDPRESS_DB_USER: $WORDPRESS_DB_USER
       WORDPRESS_DB_PASSWORD: $WORDPRESS_DB_PASSWORD
       WORDPRESS_DB_NAME: $WORDPRESS_DB_NAME
+      WORDPRESS_CONFIG_EXTRA: |
+        # Disable plugin and theme update and installation
+        define( 'DISALLOW_FILE_MODS', true );
+        # Disable automatic updates
+        define( 'AUTOMATIC_UPDATER_DISABLED', true );
     volumes:
       - document-root:/var/www/html
 
