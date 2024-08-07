@@ -26,7 +26,7 @@ I am a demo from the Chainguard Academy.
 My code was written in C.
 ```
 
-Now, with Docker Engine running, we can compile this program inside of the `gcc-glibc` Chainguard Image. We will use `Dockerfile1` for this image build.
+Now, with Docker Engine running, you can compile this program inside of the `gcc-glibc` Chainguard Image. You will use `Dockerfile1` for this image build.
 
 `Dockerfile1` will:
 1. Use the `gcc-glibc:latest` Chainguard Image as the base image;
