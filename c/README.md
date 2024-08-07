@@ -45,6 +45,6 @@ Once your image build it complete, run the following command to start a containe
 docker run --name example1 example1:latest
 ```
 
-You will see output in your terminal identical to that of the binary we compiled locally.
+You will see output in your terminal identical to that of the binary you compiled locally.
 
 If you wish to follow along with the other examples in this demonstration, please check out our complete [Getting Started with the C/C++ Chainguard Images Guide](https://edu.chainguard.dev/chainguard/chainguard-images/getting-started/c/) on the [Chainguard Academy](https://edu.chainguard.dev/)
