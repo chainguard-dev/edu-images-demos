@@ -1,6 +1,6 @@
 # C/C++ Demo
 
-This repository contains a simple demonstration of C and C++ programs using Chainguard Images. For a complete tutorial, please refer to the Chainguard Academy [Getting Started with the C/C++ Chainguard Images guide](https://edu.chainguard.dev/chainguard/chainguard-images/getting-started/c/).
+This repository contains three examples showing single and multi-stage builds for C-based programs using Chainguard Images. For a complete tutorial, please refer to the Chainguard Academy [Getting Started with the C/C++ Chainguard Images guide](https://edu.chainguard.dev/chainguard/chainguard-images/getting-started/c/).
 
 # Running the Demo
 
@@ -45,6 +45,6 @@ Once your image build it complete, run the following command to start a containe
 docker run --name example1 example1:latest
 ```
 
-You should see output in your terminal identical to that of the binary we compiled locally.
+You will see output in your terminal identical to that of the binary we compiled locally.
 
 If you wish to follow along with the other examples in this demonstration, please check out our complete [Getting Started with the C/C++ Chainguard Images Guide](https://edu.chainguard.dev/chainguard/chainguard-images/getting-started/c/) on the [Chainguard Academy](https://edu.chainguard.dev/)
