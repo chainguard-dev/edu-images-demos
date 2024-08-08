@@ -1,0 +1,17 @@
+# Example 2 - Multi-Stage Build for C
+
+FROM cgr.dev/chainguard/gcc-glibc:latest AS builder
+
+WORKDIR /usr/bin
+
+COPY hello.c ./
+
+RUN ["gcc", "-Wall", "-o", "hello", "hello.c"]
+
+FROM cgr.dev/chainguard/glibc-dynamic:latest
+
+WORKDIR /usr/bin
+
+COPY --from=builder /usr/bin/hello ./
+
+ENTRYPOINT ["./hello"]

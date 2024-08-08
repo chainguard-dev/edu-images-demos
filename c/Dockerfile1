@@ -1,0 +1,11 @@
+# Example 1 - Single Stage Build for C
+
+FROM cgr.dev/chainguard/gcc-glibc:latest
+
+WORKDIR /usr/bin
+
+COPY hello.c ./
+
+RUN ["gcc", "-Wall", "-o", "hello", "hello.c"]
+
+ENTRYPOINT ["./hello"]
