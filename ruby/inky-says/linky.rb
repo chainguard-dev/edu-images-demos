@@ -3,7 +3,7 @@
 require 'rainbow'
 Rainbow.enabled = true
 
-class Inky
+class Linky
 
     def says(message = "Hello World")
         colors = [:purple, :magenta]
@@ -15,14 +15,14 @@ class Inky
         end
 
         print "\n"
-        puts File.readlines('inky.txt')
+        puts File.readlines('linky.txt')
     end
 end
 
 if __FILE__ == $0
-    inky = Inky.new
+    linky = Linky.new
     inputArray = ARGV
     message = inputArray.length > 0 ? inputArray.join(' ') : "Hello Wolfi"
-    inky.says(message)
+    linky.says(message)
 end
 
