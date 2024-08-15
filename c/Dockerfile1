@@ -2,10 +2,14 @@
 
 FROM cgr.dev/chainguard/gcc-glibc:latest
 
-WORKDIR /usr/bin
+RUN ["mkdir", "/home/build"]
+WORKDIR /home/build
 
 COPY hello.c ./
 
 RUN ["gcc", "-Wall", "-o", "hello", "hello.c"]
+RUN ["cp", "hello", "/usr/bin/hello"]
 
-ENTRYPOINT ["./hello"]
+USER 65532
+
+ENTRYPOINT ["/usr/bin/hello"]

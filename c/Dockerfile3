@@ -2,7 +2,8 @@
 
 FROM cgr.dev/chainguard/gcc-glibc:latest AS builder
 
-WORKDIR /usr/bin
+RUN ["mkdir", "/home/build"]
+WORKDIR /home/build
 
 COPY hello.cpp ./
 
@@ -10,8 +11,8 @@ RUN ["g++", "-Wall", "-o", "hello", "hello.cpp"]
 
 FROM cgr.dev/chainguard/glibc-dynamic:latest
 
-WORKDIR /usr/bin
+COPY --from=builder /home/build/hello /usr/bin/
 
-COPY --from=builder /usr/bin/hello ./
+USER 65532
 
-ENTRYPOINT ["./hello"]
+ENTRYPOINT ["/usr/bin/hello"]

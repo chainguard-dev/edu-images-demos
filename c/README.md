@@ -18,7 +18,7 @@ You can execute the resultant binary with the following command:
 ./hello
 ```
 
-You should see the following output in your terminal.
+You will see the following output in your terminal.
 
 ```Output
 Hello, world!
@@ -30,10 +30,12 @@ Now, with Docker Engine running, you can compile this program inside of the `gcc
 
 `Dockerfile1` will:
 1. Use the `gcc-glibc:latest` Chainguard Image as the base image;
-2. Set the current working directory to `/usr/bin`;
-3. Copy our `hello.c` program code to the current directory;
-4. Compile our program and name it `hello`;
-5. Execute the compiled binary when the container is started.
+2. Create and set the current working directory to `/home/build`;
+3. Copy the `hello.c` program code to the current directory;
+4. Compile the program and name it `hello`;
+5. Copy the compiled binary to `/usr/bin`;
+6. Set the image to run as a non-root user; and,
+7. Execute the compiled binary when the container is started.
 
 Execute the following command to initiate the image build.
 ```sh
