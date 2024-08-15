@@ -26,7 +26,7 @@ Once the build is complete, run the image with:
 docker run -d --name nginxcontainer -p 8080:8080 nginx-demo
 ```
 
-The `-d` flag configures our container to run as a background process. The `--name` flag will name our container `nginxcontainer`, making it easy to identify from other containers. The `-p` flag publishes the port that the container listens on to a port on your local machine. This allows us to navigate to `localhost:8080` in a web browser of our choice to view the HTML content served by the container. You should see the same HTML page as before, with Inky and an octopus fun fact.
+The `-d` flag configures our container to run as a background process. The `--name` flag will name our container `nginxcontainer`, making it easy to identify from other containers. The `-p` flag publishes the port that the container listens on to a port on your local machine. This allows us to navigate to `localhost:8080` in a web browser of our choice to view the HTML content served by the container. You should see the same HTML page as before, with Linky and an octopus fun fact.
 
 If you wish to publish to a different port on your machine, such as `1313`, you can do so by altering the command-line argument as shown:
 
