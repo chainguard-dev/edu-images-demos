@@ -11,6 +11,6 @@ ENV GEM_HOME=/work/vendor
 ENV GEM_PATH=${GEM_PATH}:/work/vendor
 
 COPY --from=builder /work/ /work/
-COPY inky.rb inky.txt /work/
+COPY linky.rb linky.txt /work/
 
-ENTRYPOINT [ "ruby", "inky.rb" ]
+ENTRYPOINT [ "ruby", "linky.rb" ]

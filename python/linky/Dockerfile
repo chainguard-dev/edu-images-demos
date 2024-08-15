@@ -3,23 +3,23 @@ FROM cgr.dev/chainguard/python:latest-dev as builder
 ENV LANG=C.UTF-8
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV PATH="/inky/venv/bin:$PATH"
+ENV PATH="/linky/venv/bin:$PATH"
 
-WORKDIR /inky
+WORKDIR /linky
 
-RUN python -m venv /inky/venv
+RUN python -m venv /linky/venv
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
 FROM cgr.dev/chainguard/python:latest
 
-WORKDIR /inky
+WORKDIR /linky
 
 ENV PYTHONUNBUFFERED=1
 ENV PATH="/venv/bin:$PATH"
 
-COPY inky.py inky.png ./
-COPY --from=builder /inky/venv /venv
+COPY linky.py linky.png ./
+COPY --from=builder /linky/venv /venv
 
-ENTRYPOINT [ "python", "/inky/inky.py" ]
+ENTRYPOINT [ "python", "/linky/linky.py" ]
