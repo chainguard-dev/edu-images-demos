@@ -20,10 +20,10 @@ Visit `http://0.0.0.0:8080/` using a web browser on your host machine. You shoul
 Hello, Linky 🐙!
 ```
 
-Changes to the URI will be routed to the application. Try visiting http://0.0.0.0:8080/Chainguard%20Customer. You should see the following output:
+Changes to the URI will be routed to the application. Try visiting [http://0.0.0.0:8080/Chainguard%20Customer](http://0.0.0.0:8080/Chainguard%20Customer). You should see the following output:
 
 ```shell
 Hello, Chainguard Customer!
 ```
 
-The application will also share version information at http://0.0.0.0:8080/version.
+The application will also share version information at [http://0.0.0.0:8080/version](http://0.0.0.0:8080/version).
