@@ -8,7 +8,7 @@ Build the image with:
 docker build . -t digester
 ```
 
-Then use the following command to run the image.You can replace `mariadb` with any other image name available in the free tier:
+Then use the following command to run the image. You can replace `mariadb` with any other image name available in the free tier:
 
 ```shell
 docker run --rm digester mariadb
