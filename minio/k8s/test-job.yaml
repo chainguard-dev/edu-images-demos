@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: minio-test
+  namespace: minio-demo
+spec:
+  backoffLimit: 3
+  template:
+    spec:
+      restartPolicy: Never
+      initContainers:
+      # Create a test bucket using MinIO Client
+      - name: create-bucket
+        image: cgr.dev/chainguard/minio-client:latest
+        command: ["/usr/bin/mc"]
+        args:
+          - mb
+          - --ignore-existing
+          - minio/test-bucket
+        env:
+        - name: MC_HOST_minio
+          value: "http://minioadmin:minioadmin123@minio.minio-demo.svc.cluster.local:9000"
+      containers:
+      # Verify the bucket was created
+      - name: list-buckets
+        image: cgr.dev/chainguard/minio-client:latest
+        command: ["/usr/bin/mc"]
+        args:
+          - ls
+          - minio
+        env:
+        - name: MC_HOST_minio
+          value: "http://minioadmin:minioadmin123@minio.minio-demo.svc.cluster.local:9000"
