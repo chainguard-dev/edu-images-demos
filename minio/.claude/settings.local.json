@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/ltagliaferri/Documents/GitHub/images-private/images/minio/tests/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
